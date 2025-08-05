@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+
     <script>
 
         function getComputerChoice(){
@@ -65,12 +69,11 @@
             }
         }
 
+      
+
+
+
         function playGame(){
-            for (i = 0; i < 5; i++) {
-                let humanSelection = getHumanChoice();
-                let computerSelection = getComputerChoice();
-                console.log(playRound(humanSelection, computerSelection));
-             }
              if(humanScore > computerScore){
                 console.log("You won!");
              }
@@ -78,6 +81,23 @@
                 console.log("Computer WON:(")
              }
         }
+
+        document.getElementById("rock").addEventListener("click", function(){
+            let computerSelection = getComputerChoice();
+            playRound("rock", computerSelection);
+        })
+
+        document.getElementById("paper").addEventListener("click", function(){
+            let computerSelection = getComputerChoice();
+            playRound("paper", computerSelection);
+        })
+
+        document.getElementById("scissors").addEventListener("click", function(){
+            let computerSelection = getComputerChoice();
+            playRound("scissor", computerSelection);
+        })
+
+
 
         console.log(playGame())
 
